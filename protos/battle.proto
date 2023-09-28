@@ -1,47 +1,55 @@
+// Using the latest protobuf syntax version
 syntax = "proto3";
 
+// Declaring a package name for the protobuf messages and service
 package battle;
 
+// Importing the empty message type from Google's standard protobuf library
 import "google/protobuf/empty.proto";
 
+// Soldier service declaration, describing the RPC methods the service provides
 service Soldier {
+    // RPC method to set the battlefield size, expects a Request message and returns an Empty response
     rpc SetBattleFieldSize (Request) returns(google.protobuf.Empty);
-
+    
+    // RPC method to set the number of soldiers, expects a Request message and returns an Empty response
     rpc SetSoldierNum (Request) returns(google.protobuf.Empty);
-
+    
+    // RPC method to get the X position of a soldier, expects a Request message and returns a PositionReply
     rpc GetPositionX (Request) returns (PositionReply);
-
+    
+    // RPC method to get the Y position of a soldier, expects a Request message and returns a PositionReply
     rpc GetPositionY (Request) returns (PositionReply);
-
+    
+    // RPC method to indicate an incoming missile and instruct soldiers to take shelter
+    // Expects an IncomingMissile message and returns an Empty response
     rpc take_shelter (IncomingMissile) returns (google.protobuf.Empty);
-
+    
+    // RPC method to check if a soldier was hit by the missile
+    // Expects a Request message and returns a StatusReply indicating if the soldier was hit or not
     rpc was_hit (Request) returns (StatusReply);
 }
 
-// service Commander {
-//     rpc missile_approaching (IncomingMissile) returns (google.protobuf.Empty);
-
-//     rpc status_all (google.protobuf.Empty) returns (StatusReply);
-
-//     rpc GetPositionX (Request) returns (PositionReply);
-
-//     rpc GetPositionY (Request) returns (PositionReply);
-// }
-
+// Message definition for making generic requests (like getting a soldier's position or checking if they were hit)
+// It contains a single integer field 'id' to represent the soldier's ID or the battlefield size or number of soldiers
 message Request {
     int32 id = 1;
 }
 
+// Message definition for representing details of an incoming missile
 message IncomingMissile {
-    int32 pX = 1;
-    int32 pY = 2;
-    int32 type = 3;
+    int32 pX = 1;   // X position of the missile's target
+    int32 pY = 2;   // Y position of the missile's target
+    int32 type = 3; // Type/Size of the missile, which might affect its impact area
 }
 
+// Message definition for replying to the 'was_hit' method
+// Contains a boolean 'status' indicating if the soldier was hit (true) or not (false)
 message StatusReply{
     bool status = 1;
 }
 
+// Message definition for replying with a position (either X or Y) of a soldier
 message PositionReply{
-    int32 position = 1;
+    int32 position = 1; // The position value (could be X or Y based on the method call)
 }
