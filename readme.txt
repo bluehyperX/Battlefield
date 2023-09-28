@@ -18,7 +18,7 @@ This is a Python assignment for simulating a battlefield using gRPC.
 
 This simulation will continue for the time you've specified and you can view the output in the output_log.txt file.
 
-####Notes:
+#### Notes:
 
 1. Ensure the gRPC server (from battle_soldier.py) is running before you execute the battle_commander.py to see the battlefield simulation.
 2. Before starting another simulation, restart the existing gRPC server.
