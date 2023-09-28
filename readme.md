@@ -30,3 +30,14 @@ If you want to get output in terminal then execute : python battle_commander_ter
 
 1. Ensure the gRPC server (from battle_soldier.py) is running before you execute the battle_commander.py to see the battlefield simulation.
 2. Before starting another simulation, restart the existing gRPC server.
+
+### Project Videos
+
+#### Project Description
+
+<figure class="video_container">
+  <video controls="true" allowfullscreen="true">
+    <source src="'Project Description'.mp4" type="video/mp4">
+  </video>
+</figure>
+
