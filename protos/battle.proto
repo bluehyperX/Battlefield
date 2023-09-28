@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package battle;
+
+import "google/protobuf/empty.proto";
+
+service Soldier {
+    rpc SetBattleFieldSize (Request) returns(google.protobuf.Empty);
+
+    rpc SetSoldierNum (Request) returns(google.protobuf.Empty);
+
+    rpc GetPositionX (Request) returns (PositionReply);
+
+    rpc GetPositionY (Request) returns (PositionReply);
+
+    rpc take_shelter (IncomingMissile) returns (google.protobuf.Empty);
+
+    rpc was_hit (Request) returns (StatusReply);
+}
+
+// service Commander {
+//     rpc missile_approaching (IncomingMissile) returns (google.protobuf.Empty);
+
+//     rpc status_all (google.protobuf.Empty) returns (StatusReply);
+
+//     rpc GetPositionX (Request) returns (PositionReply);
+
+//     rpc GetPositionY (Request) returns (PositionReply);
+// }
+
+message Request {
+    int32 id = 1;
+}
+
+message IncomingMissile {
+    int32 pX = 1;
+    int32 pY = 2;
+    int32 type = 3;
+}
+
+message StatusReply{
+    bool status = 1;
+}
+
+message PositionReply{
+    int32 position = 1;
+}
