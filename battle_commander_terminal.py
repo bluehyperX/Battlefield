@@ -137,7 +137,8 @@ class Commander:
 def run():
 
     # Main function to simulate the battlefield
-    with grpc.insecure_channel("localhost:50051") as channel:
+    with grpc.insecure_channel("localhost:50051") as channel:       #For running on local machines, uncomment this line
+    # with grpc.insecure_channel("172.17.49.241:50051") as channel:       #For running on different machines, uncomment this line and update the IP address with the current ID address of the server
         stub = battle_pb2_grpc.SoldierStub(channel)
 
         #Taking inputs from user
@@ -161,14 +162,14 @@ def run():
         for i in range(T):
             if i%t==0:
                 commander.missile_approaching(random.randint(0,N-1), random.randint(0,N-1), N, int(i/t), random.randint(1,4))
-                sleep(3)
+                
                 commander.status_all()
                 if flag==1:
                     print(f"Game Over. Lost!")
                     return
-                sleep(3)
+                
                 commander.printLayout(N,M)
-                sleep(3)
+                
 
         print("Won!") if len(Commander.alive_soldiers) > 0.5*M else print("Lost!")
         
