@@ -159,8 +159,8 @@ def serve():
     # Start the gRPC server
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=1))
     battle_pb2_grpc.add_SoldierServicer_to_server(Soldier(), server)
-    server.add_insecure_port("localhost:50051")     #For running on local machines, uncomment this line
-    # server.add_insecure_port("172.17.49.241:50051")     #For running on different machines, uncomment this line and update the IP address with the current ID address of the server
+    # server.add_insecure_port("localhost:50051")     #For running on local machines, uncomment this line
+    server.add_insecure_port("172.17.49.241:50051")     #For running on different machines, uncomment this line and update the IP address with the current ID address of the server
     server.start()
     server.wait_for_termination()
 
