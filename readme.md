@@ -35,16 +35,8 @@ If you want to get output in terminal then execute : python battle_commander_ter
 
 #### Project Description
 
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true">
-    <source src="Project Description.mp4" type="video/mp4">
-  </video>
-</figure>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/meD7r8AxfaM?si=pZl4dHlgpPVlCXdP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 #### Project Demonstraction
 
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true">
-    <source src="Project Demonstration.mp4" type="video/mp4">
-  </video>
-</figure>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WWLrQeCv4EI?si=135qZkD5T7yxQfkF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
