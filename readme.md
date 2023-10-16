@@ -1,8 +1,12 @@
-This is a AOS assignment for simulating a battlefield using gRPC in Python.
+This is a simulation of a battlefield using gRPC in Python.
 
-#### Team Members:
-1. Sparsh Kumar 2022H1120293P
-2. Shubham Shrivastav 2022H1120283P
+#### Explaination:
+
+1. M soldiers are randomly positioned on an NxN battlefield with assigned speeds (0-4). One soldier is randomly designated as the Commander.
+2. Every t seconds, missiles strike specific coordinates, creating deadly red zones with varying radii. The Commander alerts soldiers of incoming missiles.
+3. Soldiers can move up to their speed value to adjacent blocks to avoid missile impacts. They die if they can't escape the red zone in time.
+4. If the missile hits the Commander, a new one is randomly selected from all the living soldiers. 
+5. After T time, the battle is won if more than 50% of soldiers are alive.
 
 #### Files:
 1. battle_commander.py - Contains the logic for the battlefield commander.
@@ -16,15 +20,16 @@ This is a AOS assignment for simulating a battlefield using gRPC in Python.
 #### Installation Instructions:
 1. Clone/Copy the files to 2 machines on which you want to run client and server.
 2. Ensure you have Python3.x installed on both of the machines.
-3. Install the required dependencies on both the machines using: pip install -r requirements.txt
+3. Install the required dependencies on both machines using: pip install -r requirements.txt
 
 #### Running Instructions:
 1. Change the IP addresses in battle_soldier.py and battle_commander.py to the current IP address of the server.
 2. Start the gRPC server by executing: python battle_soldier.py on one machine.
-3. Start the battlefield simulation by executing: python battle_commander.py on another machine. This will create output_log.txt file as output.
+3. Start the battlefield simulation by executing: python battle_commander.py on another machine.
+4. Provide the required values of N, M, t and T. The simulation will run and create an output_log.txt file as output.
 
 This simulation will continue for the time you've specified and you can view the output in the output_log.txt file. 
-If you want to get output in terminal then execute : python battle_commander_terminal.py
+If you want to get output in the terminal then execute: python battle_commander_terminal.py
 
 #### Notes:
 
@@ -37,6 +42,6 @@ If you want to get output in terminal then execute : python battle_commander_ter
 
 [![Video](https://img.youtube.com/vi/meD7r8AxfaM/maxresdefault.jpg)](https://www.youtube.com/watch?v=meD7r8AxfaM)
 
-#### Project Demonstraction
+#### Project Demonstration
 
 [![Video](https://img.youtube.com/vi/WWLrQeCv4EI/maxresdefault.jpg)](https://www.youtube.com/watch?v=WWLrQeCv4EI)
